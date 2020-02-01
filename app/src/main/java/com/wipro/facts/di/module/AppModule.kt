@@ -24,7 +24,11 @@ class AppModule {
         return application
     }
 
-
+    @Provides
+    @Singleton
+    internal fun provideDataManager(appDataManager: AppDataManager): DataManager {
+        return appDataManager
+    }
     @Provides
     @Singleton
     internal fun provideGson(): Gson {

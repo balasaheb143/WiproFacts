@@ -1,8 +1,9 @@
-
+package com.wipro.facts.ui.base
+import SchedulerProvider
 import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.wipro.facts.utils.rx.SchedulerProvider
+import com.wipro.facts.data.DataManager
 import io.reactivex.disposables.CompositeDisposable
 import java.lang.ref.WeakReference
 

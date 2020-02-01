@@ -1,3 +1,4 @@
+package com.wipro.facts.utils
 import android.R
 import android.view.View
 import android.widget.ImageView
@@ -6,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.wipro.facts.data.remote.RowsItem
+import com.wipro.facts.ui.home.canada.FactsAdapter
 
 
 object BindingUtils {

@@ -10,20 +10,8 @@ import com.wipro.facts.utils.rx.SchedulerProvider
 
 class SplashViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider) : BaseViewModel<SplashNavigator>(dataManager, schedulerProvider) {
 
-    fun startSeeding() {
-        compositeDisposable.add(dataManager
-                .seedDatabaseQuestions()
-                .flatMap { dataManager.seedDatabaseOptions() }
-                .subscribeOn(schedulerProvider.io())
-                .observeOn(schedulerProvider.ui())
-                .subscribe({ decideNextActivity() }, { decideNextActivity() }))
-    }
 
     private fun decideNextActivity() {
-        if (dataManager.currentUserLoggedInMode == DataManager.LoggedInMode.LOGGED_IN_MODE_LOGGED_OUT.type) {
-            navigator?.openLoginActivity()
-        } else {
             navigator?.openMainActivity()
-        }
     }
 }

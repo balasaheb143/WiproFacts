@@ -1,4 +1,4 @@
-
+package com.wipro.facts.ui.home.canada
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.wipro.facts.ui.base.BaseFragment
 import com.wipro.facts.R
 import com.wipro.facts.BR
+import com.wipro.facts.ViewModelProviderFactory
 import com.wipro.facts.databinding.FragmentFactsBinding
 import javax.inject.Inject
 

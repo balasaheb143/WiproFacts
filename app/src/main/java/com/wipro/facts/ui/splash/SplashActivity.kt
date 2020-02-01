@@ -7,8 +7,7 @@ import com.wipro.facts.R
 import com.wipro.facts.ViewModelProviderFactory
 import com.wipro.facts.databinding.ActivitySplashBinding
 import com.wipro.facts.ui.base.BaseActivity
-import com.wipro.facts.ui.login.LoginActivity
-import com.wipro.facts.ui.main.MainActivity
+import com.wipro.facts.ui.home.HomeActivity
 import javax.inject.Inject
 
 
@@ -33,14 +32,9 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(), S
             return mSplashViewModel!!
         }
 
-    override fun openLoginActivity() {
-        val intent = LoginActivity.newIntent(this@SplashActivity)
-        startActivity(intent)
-        finish()
-    }
 
     override fun openMainActivity() {
-        val intent = MainActivity.newIntent(this@SplashActivity)
+        val intent = HomeActivity.newIntent(this@SplashActivity)
         startActivity(intent)
         finish()
     }
@@ -48,6 +42,6 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(), S
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mSplashViewModel!!.navigator = this
-        mSplashViewModel!!.startSeeding()
+        openMainActivity()
     }
 }

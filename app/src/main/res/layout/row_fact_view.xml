@@ -18,7 +18,7 @@
 
         <variable
             name="viewModel"
-            type="FactsItemViewModel" />
+            type="com.wipro.facts.ui.home.canada.FactsItemViewModel" />
 
     </data>
 

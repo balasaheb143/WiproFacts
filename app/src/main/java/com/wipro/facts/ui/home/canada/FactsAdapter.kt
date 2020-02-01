@@ -1,13 +1,15 @@
+package com.wipro.facts.ui.home.canada
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.mindorks.framework.mvvm.databinding.ItemFactViewBinding
-import com.wipro.facts.databinding.ItemFactEmptyViewBinding
-import com.wipro.facts.ui.home.canada.FactsEmptyItemViewModel
+import com.wipro.facts.data.remote.RowsItem
+import com.wipro.facts.databinding.RowFactEmptyViewBinding
+import com.wipro.facts.databinding.RowFactViewBinding
+import com.wipro.facts.ui.base.BaseViewHolder
 
-
-class FactsAdapter(private val rowsItems: MutableList<RowsItem>?) : RecyclerView.Adapter<BaseViewHolder>() {
+class FactsAdapter(private val rowsItems: MutableList<RowsItem>?) :
+    RecyclerView.Adapter<BaseViewHolder>() {
 
     private var factAdapterListener: FactAdapterListener? = null
 
@@ -34,13 +36,17 @@ class FactsAdapter(private val rowsItems: MutableList<RowsItem>?) : RecyclerView
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         return when (viewType) {
             VIEW_TYPE_NORMAL -> {
-                val itemFactViewBinding = ItemFactViewBinding.inflate(LayoutInflater.from(parent.context),
-                        parent, false)
+                val itemFactViewBinding = RowFactViewBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent, false
+                )
                 FactsViewHolder(itemFactViewBinding)
             }
             else -> {
-                val itemFactEmptyViewBinding = ItemFactEmptyViewBinding.inflate(LayoutInflater.from(parent.context),
-                        parent, false)
+                val itemFactEmptyViewBinding = RowFactEmptyViewBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent, false
+                )
                 EmptyViewHolder(itemFactEmptyViewBinding)
             }
         }
@@ -64,7 +70,8 @@ class FactsAdapter(private val rowsItems: MutableList<RowsItem>?) : RecyclerView
         fun onRetryClick()
     }
 
-    inner class FactsViewHolder(private val itemFactViewBinding: ItemFactViewBinding) : BaseViewHolder(itemFactViewBinding.root) {
+    inner class FactsViewHolder(private val itemFactViewBinding: RowFactViewBinding) :
+        BaseViewHolder(itemFactViewBinding.root) {
 
         private var factsItemViewModel: FactsItemViewModel? = null
 
@@ -77,7 +84,9 @@ class FactsAdapter(private val rowsItems: MutableList<RowsItem>?) : RecyclerView
 
     }
 
-    inner class EmptyViewHolder(private val itemFactEmptyViewBinding: ItemFactEmptyViewBinding) : BaseViewHolder(itemFactEmptyViewBinding.root), FactsEmptyItemViewModel.FactEmptyItemViewModelListener {
+    inner class EmptyViewHolder(private val itemFactEmptyViewBinding: RowFactEmptyViewBinding) :
+        BaseViewHolder(itemFactEmptyViewBinding.root),
+        FactsEmptyItemViewModel.FactEmptyItemViewModelListener {
 
         override fun onBind(position: Int) {
             val emptyItemViewModel = FactsEmptyItemViewModel(this)

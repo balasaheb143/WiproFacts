@@ -1,9 +1,14 @@
+package com.wipro.facts.ui.home
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
 import com.wipro.facts.BR
 import com.wipro.facts.R
+import com.wipro.facts.ViewModelProviderFactory
 import com.wipro.facts.databinding.ActivityHomeBinding
+import com.wipro.facts.ui.base.BaseActivity
 import javax.inject.Inject
 
 
@@ -43,5 +48,12 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
         }
 
 
+    }
+
+    companion object {
+
+        fun newIntent(context: Context): Intent {
+            return Intent(context, HomeActivity::class.java)
+        }
     }
 }

@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="HomeViewModel" />
+            type="com.wipro.facts.ui.home.HomeViewModel" />
 
     </data>
 

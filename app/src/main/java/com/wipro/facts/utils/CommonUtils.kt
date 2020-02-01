@@ -6,9 +6,6 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import com.wipro.facts.R
 
-/**
- * Created by amitshekhar on 07/07/17.
- */
 
 object CommonUtils {
 

@@ -1,3 +1,4 @@
+package com.wipro.facts.ui.home.canada
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.Module
 import dagger.Provides

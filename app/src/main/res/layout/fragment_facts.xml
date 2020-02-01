@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="FactsViewModel" />
+            type="com.wipro.facts.ui.home.canada.FactsViewModel" />
 
     </data>
 
@@ -22,7 +22,7 @@
             android:id="@+id/canadaRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_fact_view" />
+            tools:listitem="@layout/row_fact_view" />
 
 
         <androidx.core.widget.ContentLoadingProgressBar
