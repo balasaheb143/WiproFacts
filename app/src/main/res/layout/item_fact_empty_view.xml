@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.wipro.facts.ui.home.canada.FactsEmptyItemViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_message"
+            style="@style/textViewBody1Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_16"
+            android:gravity="center"
+            android:text="@string/empty_screen"
+            android:textColor="@color/gray" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_retry"
+            style="@style/ButtonBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_16"
+            android:onClick="@{() -> viewModel.onRetryClick()}"
+            android:text="@string/retry"
+            android:textSize="@dimen/sp_20" />
+    </LinearLayout>
+
+</layout>
