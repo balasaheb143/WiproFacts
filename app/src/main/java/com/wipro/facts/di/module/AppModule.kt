@@ -2,8 +2,12 @@ import android.app.Application
 import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.wipro.facts.data.AppDataManager
+import com.wipro.facts.data.DataManager
+import com.wipro.facts.data.remote.ApiHelper
 import com.wipro.facts.data.remote.AppApiHelper
 import com.wipro.facts.utils.rx.AppSchedulerProvider
+import com.wipro.facts.utils.rx.SchedulerProvider
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

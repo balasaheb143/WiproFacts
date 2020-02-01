@@ -1,5 +1,6 @@
 
 import android.app.Application
+import com.wipro.facts.MvvmApp
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
