@@ -53,6 +53,7 @@ class FactsAdapter(private val rowsItems: MutableList<RowsItem>?) :
     }
 
     fun addItems(rowsItems: List<RowsItem>) {
+        this.rowsItems?.clear()
         this.rowsItems?.addAll(rowsItems)
         notifyDataSetChanged()
     }
