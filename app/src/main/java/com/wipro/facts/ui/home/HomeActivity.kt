@@ -1,4 +1,6 @@
 package com.wipro.facts.ui.home
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
 import com.wipro.facts.BR
@@ -43,7 +45,11 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)
             supportActionBar!!.setDisplayShowHomeEnabled(true)
         }
+    }
+    companion object {
 
-
+        fun newIntent(context: Context): Intent {
+            return Intent(context, HomeActivity::class.java)
+        }
     }
 }
