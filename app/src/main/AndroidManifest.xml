@@ -24,11 +24,10 @@
             </intent-filter>
         </activity>
 
-
-     <!--  <activity
+        <activity
             android:name=".ui.home.HomeActivity"
              android:launchMode="singleTop" />
--->
+
 
     </application>
 

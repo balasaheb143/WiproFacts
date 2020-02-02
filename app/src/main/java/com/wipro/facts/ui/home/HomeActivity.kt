@@ -1,11 +1,6 @@
 package com.wipro.facts.ui.home
-
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
-import com.google.android.material.tabs.TabLayout
-import com.wipro.facts.ui.feed.FeedPagerAdapter
 import com.wipro.facts.BR
 import com.wipro.facts.R
 import com.wipro.facts.ViewModelProviderFactory
@@ -17,8 +12,7 @@ import javax.inject.Inject
 class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
     override fun onFragmentDetached(tag: String) {
     }
-    @set:Inject
-    var mPagerAdapter: FeedPagerAdapter? = null
+
     @set:Inject
     var factory: ViewModelProviderFactory? = null
     private var mActivityFeedBinding: ActivityHomeBinding? = null
@@ -42,6 +36,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
         mActivityFeedBinding = viewDataBinding
         setUp()
     }
+
     private fun setUp() {
         setSupportActionBar(mActivityFeedBinding!!.toolbar)
         if (supportActionBar != null) {
@@ -50,35 +45,5 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
         }
 
 
-        mActivityFeedBinding!!.feedViewPager.adapter = mPagerAdapter
-
-        mActivityFeedBinding!!.tabLayout.addTab(mActivityFeedBinding!!.tabLayout.newTab().setText(getString(R.string.blog)))
-        mActivityFeedBinding!!.tabLayout.addTab(mActivityFeedBinding!!.tabLayout.newTab().setText(getString(R.string.open_source)))
-
-        mActivityFeedBinding!!.feedViewPager.offscreenPageLimit = mActivityFeedBinding!!.tabLayout.tabCount
-
-        mActivityFeedBinding!!.feedViewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(mActivityFeedBinding!!.tabLayout))
-
-        mActivityFeedBinding!!.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabReselected(tab: TabLayout.Tab) {
-
-            }
-
-            override fun onTabSelected(tab: TabLayout.Tab) {
-                mActivityFeedBinding!!.feedViewPager.currentItem = tab.position
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab) {
-
-            }
-        })
-    }
-
-
-    companion object {
-
-        fun newIntent(context: Context): Intent {
-            return Intent(context, HomeActivity::class.java)
-        }
     }
 }
