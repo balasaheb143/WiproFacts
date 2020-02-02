@@ -1,4 +1,5 @@
 package com.wipro.facts.utils
+
 import android.view.View
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter

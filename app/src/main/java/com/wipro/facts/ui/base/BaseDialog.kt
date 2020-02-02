@@ -1,4 +1,5 @@
 package com.wipro.facts.ui.base
+
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable

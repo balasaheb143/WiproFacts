@@ -8,10 +8,11 @@ import com.wipro.facts.utils.rx.SchedulerProvider
  * Created by amitshekhar on 08/07/17.
  */
 
-class SplashViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider) : BaseViewModel<SplashNavigator>(dataManager, schedulerProvider) {
+class SplashViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider) :
+    BaseViewModel<SplashNavigator>(dataManager, schedulerProvider) {
 
 
     private fun decideNextActivity() {
-            navigator?.openMainActivity()
+        navigator?.openMainActivity()
     }
 }

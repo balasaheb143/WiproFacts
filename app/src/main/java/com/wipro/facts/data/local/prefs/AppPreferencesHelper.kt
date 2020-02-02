@@ -2,7 +2,6 @@ package com.wipro.facts.data.local.prefs
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.wipro.facts.data.DataManager
 import com.wipro.facts.di.PreferenceInfo
 import com.wipro.facts.utils.AppConstants
 import javax.inject.Inject
@@ -14,7 +13,8 @@ import javax.inject.Inject
 class AppPreferencesHelper @Inject
 constructor(context: Context, @PreferenceInfo prefFileName: String) : PreferencesHelper {
 
-    private val mPrefs: SharedPreferences = context.getSharedPreferences(prefFileName, Context.MODE_PRIVATE)
+    private val mPrefs: SharedPreferences =
+        context.getSharedPreferences(prefFileName, Context.MODE_PRIVATE)
 
     override var accessToken: String?
         get() = mPrefs.getString(PREF_KEY_ACCESS_TOKEN, null)

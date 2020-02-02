@@ -1,4 +1,5 @@
 package com.wipro.facts
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.wipro.facts.data.DataManager

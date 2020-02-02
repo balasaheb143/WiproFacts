@@ -7,11 +7,13 @@ import com.google.gson.annotations.SerializedName
  * Created by amitshekhar on 07/07/17.
  */
 
-class ApiError(private val errorCode: Int, @field:Expose
-@field:SerializedName("status_code")
-val statusCode: String?, @field:Expose
-               @field:SerializedName("message")
-               val message: String?) {
+class ApiError(
+    private val errorCode: Int, @field:Expose
+    @field:SerializedName("status_code")
+    val statusCode: String?, @field:Expose
+    @field:SerializedName("message")
+    val message: String?
+) {
 
     override fun equals(`object`: Any?): Boolean {
         if (this === `object`) {
@@ -27,9 +29,10 @@ val statusCode: String?, @field:Expose
             return false
         }
         if (if (statusCode != null)
-                    statusCode != apiError.statusCode
-                else
-                    apiError.statusCode != null) {
+                statusCode != apiError.statusCode
+            else
+                apiError.statusCode != null
+        ) {
             return false
         }
         return if (message != null) message == apiError.message else apiError.message == null

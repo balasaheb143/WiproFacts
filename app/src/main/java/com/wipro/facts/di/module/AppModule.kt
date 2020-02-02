@@ -2,11 +2,8 @@ package com.wipro.facts.di.module
 
 import android.app.Application
 import android.content.Context
-import androidx.room.Room
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.wipro.facts.BuildConfig
-import com.wipro.facts.R
 import com.wipro.facts.data.AppDataManager
 import com.wipro.facts.data.DataManager
 import com.wipro.facts.data.local.prefs.AppPreferencesHelper
@@ -82,12 +79,15 @@ class AppModule {
 
     @Provides
     @Singleton
-    internal fun provideProtectedApiHeader(@ApiInfo apiKey: String,
-                                           preferencesHelper: PreferencesHelper): ApiHeader.ProtectedApiHeader {
+    internal fun provideProtectedApiHeader(
+        @ApiInfo apiKey: String,
+        preferencesHelper: PreferencesHelper
+    ): ApiHeader.ProtectedApiHeader {
         return ApiHeader.ProtectedApiHeader(
-                apiKey,
-                preferencesHelper.currentUserId,
-                preferencesHelper.accessToken)
+            apiKey,
+            preferencesHelper.currentUserId,
+            preferencesHelper.accessToken
+        )
     }
 
     @Provides

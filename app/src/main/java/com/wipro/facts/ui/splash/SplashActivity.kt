@@ -1,6 +1,5 @@
 package com.wipro.facts.ui.splash
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
 import com.wipro.facts.BR

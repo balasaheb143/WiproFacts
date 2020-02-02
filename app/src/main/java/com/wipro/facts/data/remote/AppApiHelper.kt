@@ -16,7 +16,7 @@ constructor(override val apiHeader: ApiHeader) : ApiHelper {
 
     override val canadaApiCall: Single<FactsOutputModel>
         get() = Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_CANADA)
-                .addHeaders(apiHeader.protectedApiHeader)
-                .build()
-                .getObjectSingle(FactsOutputModel::class.java)
+            .addHeaders(apiHeader.protectedApiHeader)
+            .build()
+            .getObjectSingle(FactsOutputModel::class.java)
 }

@@ -1,4 +1,5 @@
 package com.wipro.facts.data.remote
+
 import com.google.gson.annotations.SerializedName
 
 data class RowsItem(

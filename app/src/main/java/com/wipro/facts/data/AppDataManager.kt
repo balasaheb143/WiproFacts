@@ -15,7 +15,12 @@ import javax.inject.Singleton
  */
 @Singleton
 class AppDataManager @Inject
-constructor(private val mContext: Context, private val mPreferencesHelper: PreferencesHelper, private val mApiHelper: ApiHelper, private val mGson: Gson) : DataManager {
+constructor(
+    private val mContext: Context,
+    private val mPreferencesHelper: PreferencesHelper,
+    private val mApiHelper: ApiHelper,
+    private val mGson: Gson
+) : DataManager {
 
     override var accessToken: String?
         get() = mPreferencesHelper.accessToken

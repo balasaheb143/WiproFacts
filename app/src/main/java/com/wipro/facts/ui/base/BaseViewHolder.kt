@@ -1,4 +1,5 @@
 package com.wipro.facts.ui.base
+
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 

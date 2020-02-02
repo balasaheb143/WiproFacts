@@ -1,19 +1,21 @@
 package com.wipro.facts.ui.home.canada
+
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.wipro.facts.ui.base.BaseFragment
-import com.wipro.facts.R
 import com.wipro.facts.BR
+import com.wipro.facts.R
 import com.wipro.facts.ViewModelProviderFactory
 import com.wipro.facts.databinding.FragmentFactsBinding
+import com.wipro.facts.ui.base.BaseFragment
 import javax.inject.Inject
 
 
-class FactsFragment : BaseFragment<FragmentFactsBinding, FactsViewModel>(), FactsNavigator, FactsAdapter.FactAdapterListener {
+class FactsFragment : BaseFragment<FragmentFactsBinding, FactsViewModel>(), FactsNavigator,
+    FactsAdapter.FactAdapterListener {
 
     @set:Inject
     var mFactsAdapter: FactsAdapter? = null
@@ -63,16 +65,11 @@ class FactsFragment : BaseFragment<FragmentFactsBinding, FactsViewModel>(), Fact
         fragmentFactsBinding?.canadaRecyclerView?.layoutManager = mLayoutManager
         fragmentFactsBinding?.canadaRecyclerView?.itemAnimator = DefaultItemAnimator()
         fragmentFactsBinding?.canadaRecyclerView?.adapter = mFactsAdapter
-        mFactsViewModel?.getRowsItemLiveData()?.observe(viewLifecycleOwner, Observer { t -> mFactsAdapter?.addItems(t) })
-    }
-
-    companion object {
-
-        fun newInstance(): FactsFragment {
-            val args = Bundle()
-            val fragment = FactsFragment()
-            fragment.arguments = args
-            return fragment
-        }
+        mFactsViewModel?.getRowsItemLiveData()
+            ?.observe(viewLifecycleOwner, Observer { t -> mFactsAdapter?.addItems(t) })
+        mFactsViewModel?.getPageTitle()
+            ?.observe(
+                viewLifecycleOwner,
+                Observer { t -> fragmentFactsBinding?.toolbar?.title = t })
     }
 }

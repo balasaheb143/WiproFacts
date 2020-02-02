@@ -1,4 +1,5 @@
 package com.wipro.facts.ui.home
+
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -19,7 +20,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
     var factory: ViewModelProviderFactory? = null
     private var mActivityFeedBinding: ActivityHomeBinding? = null
     private var mHomeViewModel: HomeViewModel? = null
-
     override val bindingVariable: Int
         get() = BR.viewModel
 
@@ -36,16 +36,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mActivityFeedBinding = viewDataBinding
-        setUp()
     }
 
-    private fun setUp() {
-        setSupportActionBar(mActivityFeedBinding!!.toolbar)
-        if (supportActionBar != null) {
-            supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-            supportActionBar!!.setDisplayShowHomeEnabled(true)
-        }
-    }
     companion object {
 
         fun newIntent(context: Context): Intent {

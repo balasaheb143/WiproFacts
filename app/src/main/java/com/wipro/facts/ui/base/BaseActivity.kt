@@ -1,4 +1,5 @@
 package com.wipro.facts.ui.base
+
 import android.annotation.TargetApi
 import android.app.ProgressDialog
 import android.content.Context
