@@ -7,7 +7,6 @@ import javax.inject.Qualifier
 /**
  * Created by amitshekhar on 07/07/17.
  */
-
 @Qualifier
 @Retention(RetentionPolicy.RUNTIME)
-annotation class ApiInfo
+annotation class PreferenceInfo

@@ -1,14 +1,15 @@
 package com.wipro.facts.ui.home.canada
-import SchedulerProvider
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.wipro.facts.data.DataManager
 import com.wipro.facts.data.remote.RowsItem
 import com.wipro.facts.ui.base.BaseViewModel
+import com.wipro.facts.utils.rx.SchedulerProvider
 
 
 class FactsViewModel(dataManager: DataManager,
-                     schedulerProvider: SchedulerProvider) : BaseViewModel<FactsNavigator>(dataManager, schedulerProvider) {
+                     schedulerProvider: SchedulerProvider
+) : BaseViewModel<FactsNavigator>(dataManager, schedulerProvider) {
 
     private val rowsItemLiveData: MutableLiveData<List<RowsItem>> = MutableLiveData()
     private val pageTitle: MutableLiveData<String> = MutableLiveData()

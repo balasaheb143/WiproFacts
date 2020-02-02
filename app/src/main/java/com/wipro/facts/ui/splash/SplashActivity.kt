@@ -34,9 +34,9 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(), S
 
 
     override fun openMainActivity() {
-        val intent = HomeActivity.newIntent(this@SplashActivity)
-        startActivity(intent)
-        finish()
+//        val intent = HomeActivity.newIntent(this@SplashActivity)
+//        startActivity(intent)
+//        finish()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

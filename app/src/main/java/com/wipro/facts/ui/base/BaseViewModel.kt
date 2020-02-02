@@ -1,15 +1,16 @@
 package com.wipro.facts.ui.base
-import SchedulerProvider
 import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wipro.facts.data.DataManager
+import com.wipro.facts.utils.rx.SchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
 import java.lang.ref.WeakReference
 
 
 abstract class BaseViewModel<N>(val dataManager: DataManager,
-                                val schedulerProvider: SchedulerProvider) : ViewModel() {
+                                val schedulerProvider: SchedulerProvider
+) : ViewModel() {
 
     val isLoading = ObservableBoolean()
 

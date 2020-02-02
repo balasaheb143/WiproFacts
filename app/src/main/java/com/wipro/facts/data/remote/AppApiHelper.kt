@@ -5,13 +5,18 @@ import io.reactivex.Single
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * Created by amitshekhar on 07/07/17.
+ */
 
 @Singleton
 class AppApiHelper @Inject
-constructor() : ApiHelper {
+constructor(override val apiHeader: ApiHeader) : ApiHelper {
+
 
     override val canadaApiCall: Single<FactsOutputModel>
         get() = Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_CANADA)
-            .build()
-            .getObjectSingle(FactsOutputModel::class.java)
+                .addHeaders(apiHeader.protectedApiHeader)
+                .build()
+                .getObjectSingle(FactsOutputModel::class.java)
 }

@@ -1,5 +1,4 @@
 package com.wipro.facts.utils
-import android.R
 import android.view.View
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
@@ -7,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.wipro.facts.R
 import com.wipro.facts.data.remote.RowsItem
 import com.wipro.facts.ui.home.canada.FactsAdapter
 
@@ -33,8 +33,8 @@ object BindingUtils {
             val context = imageView.context
             Glide.with(context)
                 .load(url).apply(
-                    RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.ic_delete).placeholder(
-                        R.drawable.progress_indeterminate_horizontal
+                    RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.error_holder).placeholder(
+                        R.drawable.place_holder
                     )
                 )
                 .override(

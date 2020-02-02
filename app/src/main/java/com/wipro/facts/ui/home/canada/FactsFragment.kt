@@ -63,7 +63,7 @@ class FactsFragment : BaseFragment<FragmentFactsBinding, FactsViewModel>(), Fact
         fragmentFactsBinding?.canadaRecyclerView?.layoutManager = mLayoutManager
         fragmentFactsBinding?.canadaRecyclerView?.itemAnimator = DefaultItemAnimator()
         fragmentFactsBinding?.canadaRecyclerView?.adapter = mFactsAdapter
-        mFactsViewModel?.getRowsItemLiveData()?.observe(this, Observer { t -> mFactsAdapter?.addItems(t) })
+        mFactsViewModel?.getRowsItemLiveData()?.observe(viewLifecycleOwner, Observer { t -> mFactsAdapter?.addItems(t) })
     }
 
     companion object {

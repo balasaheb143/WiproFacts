@@ -25,10 +25,10 @@
         </activity>
 
 
-        <activity
+     <!--  <activity
             android:name=".ui.home.HomeActivity"
-            android:launchMode="singleTop" />
-
+             android:launchMode="singleTop" />
+-->
 
     </application>
 
