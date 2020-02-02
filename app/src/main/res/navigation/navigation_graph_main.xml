@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/factsFragment"
-        android:name="FactsFragment"
+        android:name="com.wipro.facts.ui.home.canada.FactsFragment"
         android:label="FactsFragment"
         tools:layout="@layout/fragment_facts" />
 
