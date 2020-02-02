@@ -52,10 +52,9 @@
                 android:id="@+id/descriptionTextView"
                 style="@style/Caption1Regular"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/dp_10"
                 android:gravity="start|top"
-
                 android:text="@{viewModel.description}"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -68,7 +67,6 @@
                 android:id="@+id/factImageView"
                 android:layout_width="@dimen/image_width"
                 android:layout_height="@dimen/image_height"
-                android:layout_marginEnd="@dimen/dp_10"
                 android:adjustViewBounds="true"
                 app:imageUrl='@{viewModel.imageHref!=null? viewModel.imageHref: ""}'
                 app:layout_constraintEnd_toEndOf="parent"

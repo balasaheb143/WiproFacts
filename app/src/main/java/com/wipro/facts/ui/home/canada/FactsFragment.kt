@@ -65,8 +65,13 @@ class FactsFragment : BaseFragment<FragmentFactsBinding, FactsViewModel>(), Fact
         fragmentFactsBinding?.canadaRecyclerView?.layoutManager = mLayoutManager
         fragmentFactsBinding?.canadaRecyclerView?.itemAnimator = DefaultItemAnimator()
         fragmentFactsBinding?.canadaRecyclerView?.adapter = mFactsAdapter
+        fragmentFactsBinding?.swipeRefresh?.setOnRefreshListener {
+            mFactsViewModel?.fetchCanadaRows()
+        }
         mFactsViewModel?.getRowsItemLiveData()
-            ?.observe(viewLifecycleOwner, Observer { t -> mFactsAdapter?.addItems(t) })
+            ?.observe(viewLifecycleOwner, Observer { t ->
+                mFactsAdapter?.addItems(t)
+            })
         mFactsViewModel?.getPageTitle()
             ?.observe(
                 viewLifecycleOwner,
