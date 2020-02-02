@@ -1,5 +1,6 @@
 package com.wipro.facts.ui.splash
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
 import com.wipro.facts.BR
@@ -42,6 +43,18 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(), S
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mSplashViewModel!!.navigator = this
-        openMainActivity()
+        val timer: Thread = object : Thread() {
+            override fun run() {
+                try { //Display for 3 seconds
+                    sleep(3000)
+                } catch (e: InterruptedException) {
+                    e.printStackTrace()
+                } finally {
+                    openMainActivity()
+                }
+            }
+        }
+        timer.start()
+
     }
 }
