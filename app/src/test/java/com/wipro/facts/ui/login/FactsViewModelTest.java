@@ -1,4 +1,4 @@
-package com.wipro.facts.ui.login;
+package com.wipro.facts.ui.facts;
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
 
