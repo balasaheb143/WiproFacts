@@ -79,7 +79,15 @@ public class FactsViewModelTest {
     public void testListContainData() {
         ArrayList<RowsItem> items = new ArrayList<>();
         RowsItem rowsItemFact1 = new RowsItem();
+        rowsItemFact1.setTitle("Test1");
+        rowsItemFact1.setDescription("Test1");
+        rowsItemFact1.setImageHref("Test1");
+
         RowsItem rowsItemFact2 = new RowsItem();
+        rowsItemFact2.setTitle("Test2");
+        rowsItemFact2.setDescription("Test2");
+        rowsItemFact2.setImageHref("Test2");
+
         items.add(rowsItemFact1);
         items.add(rowsItemFact2);
         FactsOutputModel factsOutputModel = new FactsOutputModel("Test", items);
