@@ -28,7 +28,7 @@ object BindingUtils {
     @JvmStatic
     @BindingAdapter("imageUrl")
     fun setImageUrl(imageView: ImageView, url: String) {
-        if (url.isNullOrBlank()) {
+        if (url.isBlank()) {
             imageView.visibility = View.GONE
         } else {
             val context = imageView.context

@@ -6,10 +6,6 @@ import com.wipro.facts.di.ApiInfo
 import javax.inject.Inject
 import javax.inject.Singleton
 
-/**
- * Created by amitshekhar on 07/07/17.
- */
-
 @Singleton
 class ApiHeader @Inject
 constructor(val publicApiHeader: PublicApiHeader, val protectedApiHeader: ProtectedApiHeader) {

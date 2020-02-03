@@ -6,9 +6,6 @@ import com.wipro.facts.ui.splash.SplashActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
-/**
- * Created by amitshekhar on 14/09/17.
- */
 @Module
 abstract class ActivityBuilder {
 

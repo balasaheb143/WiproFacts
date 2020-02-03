@@ -10,10 +10,6 @@ import androidx.databinding.ViewDataBinding
 import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.DaggerFragment
 
-/**
- * Created by amitshekhar on 09/07/17.
- */
-
 abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel<*>> : DaggerFragment() {
 
     var baseActivity: BaseActivity<*, *>? = null

@@ -1,8 +1,5 @@
 package com.wipro.facts.utils
 
-/**
- * Created by amitshekhar on 07/07/17.
- */
 
 object AppConstants {
 

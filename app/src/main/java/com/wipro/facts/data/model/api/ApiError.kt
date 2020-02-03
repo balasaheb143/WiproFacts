@@ -3,9 +3,6 @@ package com.wipro.facts.data.model.api
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-/**
- * Created by amitshekhar on 07/07/17.
- */
 
 class ApiError(
     private val errorCode: Int, @field:Expose

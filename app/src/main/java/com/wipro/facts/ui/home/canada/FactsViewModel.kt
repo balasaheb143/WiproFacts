@@ -16,10 +16,6 @@ class FactsViewModel(
     private val rowsItemLiveData: MutableLiveData<List<RowsItem>> = MutableLiveData()
     private val pageTitle: MutableLiveData<String> = MutableLiveData()
 
-    init {
-        fetchCanadaRows()
-    }
-
 
     fun fetchCanadaRows() {
         setIsLoading(true)

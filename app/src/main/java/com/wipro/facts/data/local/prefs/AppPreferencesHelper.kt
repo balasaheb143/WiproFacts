@@ -6,9 +6,6 @@ import com.wipro.facts.di.PreferenceInfo
 import com.wipro.facts.utils.AppConstants
 import javax.inject.Inject
 
-/**
- * Created by amitshekhar on 07/07/17.
- */
 
 class AppPreferencesHelper @Inject
 constructor(context: Context, @PreferenceInfo prefFileName: String) : PreferencesHelper {

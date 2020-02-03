@@ -1,7 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <integer name="phone_number_validation">15</integer>
-    <integer name="max_last_name">20</integer>
-    <integer name="max_otp">10</integer>
-    <integer name="max_password">24</integer>
-</resources>
+<resources></resources>

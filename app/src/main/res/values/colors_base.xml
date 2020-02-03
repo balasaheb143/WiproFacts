@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="darkGreyBlue">#2C446D</color>
-    <color name="darkBlue">#22375A</color>
-    <color name="textColorHint">#B4B7C0</color>
-    <color name="colorSuccessGreen">#2ECC71</color>
-    <color name="colorErrorRed">#F00000</color>
-    <color name="colorBrownGrey">#9a9a9a</color>
-    <color name="dark_grey_blue">#2c446d</color>
     <color name="cool_grey">#b4b7c0</color>
-    <color name="clear_blue">#1b6fff</color>
-    <color name="warning">#FF9F00</color>
-    <color name="greyish_brown">#3d3d3d</color>
-    <color name="steel">#7d818f</color>
-    <color name="cherry_red">#ed1c23</color>
-    <color name="white_three">#e0e0e0</color>
     <color name="black">#3a3a3a</color>
-    <color name="link">#0000EE</color>
 </resources>

@@ -10,7 +10,6 @@ import android.view.inputmethod.InputMethodManager
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.wipro.facts.utils.CommonUtils
 import com.wipro.facts.utils.NetworkUtils
 import dagger.android.AndroidInjection
 import dagger.android.support.DaggerAppCompatActivity
@@ -45,7 +44,7 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel<*>> : DaggerA
     abstract val viewModel: V
 
     val isNetworkConnected: Boolean?
-        get() = NetworkUtils.isNetworkConnected(applicationContext)
+        get() = NetworkUtils.isNetworkConnected(this)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,10 +84,6 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel<*>> : DaggerA
         }
     }
 
-    fun showLoading() {
-        hideLoading()
-        mProgressDialog = CommonUtils.showLoadingDialog(this)
-    }
 
     private fun performDataBinding() {
         viewDataBinding = DataBindingUtil.setContentView(this, layoutId)

@@ -10,9 +10,6 @@ import io.reactivex.Single
 import javax.inject.Inject
 import javax.inject.Singleton
 
-/**
- * Created by amitshekhar on 07/07/17.
- */
 @Singleton
 class AppDataManager @Inject
 constructor(
@@ -46,8 +43,8 @@ constructor(
 
 
     override fun updateApiHeader(userId: Long?, accessToken: String?) {
-        mApiHelper.apiHeader?.protectedApiHeader?.userId = userId
-        mApiHelper.apiHeader?.protectedApiHeader?.accessToken = accessToken
+        mApiHelper.apiHeader.protectedApiHeader.userId = userId
+        mApiHelper.apiHeader.protectedApiHeader.accessToken = accessToken
     }
 
 

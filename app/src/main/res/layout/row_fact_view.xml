@@ -29,7 +29,7 @@
         app:cardCornerRadius="@dimen/dp_5"
         app:cardElevation="@dimen/dp_5"
         app:strokeColor="@color/dark_gray"
-        app:strokeWidth="@dimen/dp_2">
+        app:strokeWidth="@dimen/dp_1">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

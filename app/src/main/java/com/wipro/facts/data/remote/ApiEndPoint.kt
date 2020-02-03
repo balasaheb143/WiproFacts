@@ -1,9 +1,6 @@
 package com.wipro.facts.data.remote
 
 
-/**
- * Created by amitshekhar on 07/07/17.
- */
 
 object ApiEndPoint {
 

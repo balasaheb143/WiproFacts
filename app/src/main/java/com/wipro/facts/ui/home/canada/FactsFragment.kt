@@ -2,6 +2,7 @@ package com.wipro.facts.ui.home.canada
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -11,11 +12,11 @@ import com.wipro.facts.R
 import com.wipro.facts.ViewModelProviderFactory
 import com.wipro.facts.databinding.FragmentFactsBinding
 import com.wipro.facts.ui.base.BaseFragment
+import com.wipro.facts.utils.NetworkUtils
 import javax.inject.Inject
 
 
-class FactsFragment : BaseFragment<FragmentFactsBinding, FactsViewModel>(), FactsNavigator,
-    FactsAdapter.FactAdapterListener {
+class FactsFragment : BaseFragment<FragmentFactsBinding, FactsViewModel>(), FactsNavigator {
 
     @set:Inject
     var mFactsAdapter: FactsAdapter? = null
@@ -46,11 +47,6 @@ class FactsFragment : BaseFragment<FragmentFactsBinding, FactsViewModel>(), Fact
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mFactsViewModel!!.navigator = this
-        mFactsAdapter!!.setListener(this)
-    }
-
-    override fun onRetryClick() {
-        mFactsViewModel!!.fetchCanadaRows()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -61,20 +57,26 @@ class FactsFragment : BaseFragment<FragmentFactsBinding, FactsViewModel>(), Fact
 
 
     private fun setUp() {
+        getData()
         mLayoutManager?.orientation = LinearLayoutManager.VERTICAL
         fragmentFactsBinding?.canadaRecyclerView?.layoutManager = mLayoutManager
         fragmentFactsBinding?.canadaRecyclerView?.itemAnimator = DefaultItemAnimator()
         fragmentFactsBinding?.canadaRecyclerView?.adapter = mFactsAdapter
-        fragmentFactsBinding?.swipeRefresh?.setOnRefreshListener {
-            mFactsViewModel?.fetchCanadaRows()
-        }
+        fragmentFactsBinding?.swipeRefresh?.setOnRefreshListener(this::getData)
         mFactsViewModel?.getRowsItemLiveData()
-            ?.observe(viewLifecycleOwner, Observer { t ->
-                mFactsAdapter?.addItems(t)
-            })
+            ?.observe(viewLifecycleOwner, Observer { t -> mFactsAdapter?.addItems(t) })
         mFactsViewModel?.getPageTitle()
             ?.observe(
                 viewLifecycleOwner,
                 Observer { t -> fragmentFactsBinding?.toolbar?.title = t })
+    }
+
+    private fun getData() {
+        if (NetworkUtils.isNetworkConnected(activity)) {
+            mFactsViewModel?.fetchCanadaRows()
+        } else {
+            Toast.makeText(activity, getString(R.string.network_not_available), Toast.LENGTH_SHORT)
+                .show()
+        }
     }
 }
