@@ -8,12 +8,11 @@ import javax.inject.Singleton
 
 @Singleton
 class AppApiHelper @Inject
-constructor(override val apiHeader: ApiHeader) : ApiHelper {
+constructor() : ApiHelper {
 
 
     override val canadaApiCall: Single<FactsOutputModel>
         get() = Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_CANADA)
-            .addHeaders(apiHeader.protectedApiHeader)
             .build()
             .getObjectSingle(FactsOutputModel::class.java)
 }

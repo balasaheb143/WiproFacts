@@ -12,9 +12,6 @@
             name="key"
             type="String" />
 
-        <variable
-            name="appConstants"
-            type="com.wipro.facts.utils.AppConstants" />
 
         <variable
             name="viewModel"
