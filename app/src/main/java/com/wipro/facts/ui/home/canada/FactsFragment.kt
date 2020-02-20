@@ -72,9 +72,11 @@ class FactsFragment : BaseFragment<FragmentFactsBinding, FactsViewModel>(), Fact
     }
 
     private fun getData() {
+         mFactsViewModel?.setIsLoading(true)
         if (NetworkUtils.isNetworkConnected(activity)) {
             mFactsViewModel?.fetchCanadaRows()
         } else {
+            mFactsViewModel?.setIsLoading(false)
             Toast.makeText(activity, getString(R.string.network_not_available), Toast.LENGTH_SHORT)
                 .show()
         }

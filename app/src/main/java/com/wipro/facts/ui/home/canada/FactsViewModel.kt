@@ -23,7 +23,7 @@ class FactsViewModel(
             .subscribeOn(schedulerProvider.io())
             .observeOn(schedulerProvider.ui()).map {
                 it.rows =
-                    it.rows.filter { rowsItem -> rowsItem.imageHref != null && rowsItem.title != null && rowsItem.description != null }
+                    it.rows.filter { rowsItem -> rowsItem.imageHref != null || rowsItem.title != null || rowsItem.description != null }
                 return@map it
             }
             .subscribe({ canadaInputModel ->
